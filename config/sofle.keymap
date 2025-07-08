@@ -11,7 +11,7 @@
 
 // Encoders
 
-&sensors { triggers-per-rotation = <30>; };
+&sensors { triggers-per-rotation = <20>; };
 
 &left_encoder { steps = <60>; };
 
