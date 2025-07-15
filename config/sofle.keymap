@@ -84,6 +84,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        shift_tab: shift_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_TAB";
+            bindings = <&shift_caps>, <&kp LS(TAB)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -111,7 +120,7 @@
             bindings = <
 &gresc       &kp N1  &kp N2    &kp N3        &kp N4            &kp N5                                          &kp N6          &kp N7     &kp N8         &kp N9       &kp N0    &kp MINUS
 &kp TAB      &kp Q   &kp W     &kp E         &kp R             &kp T                                           &kp Y           &kp U      &kp I          &kp O        &kp P     &kp BSPC
-&shift_caps  &kp A   &kp S     &kp D         &kp F             &kp G                                           &kp H           &kp J      &kp K          &kp L        &kp SEMI  &kp RET
+&shift_tab   &kp A   &kp S     &kp D         &kp F             &kp G                                           &kp H           &kp J      &kp K          &kp L        &kp SEMI  &kp RET
 &shift_caps  &kp Z   &kp X     &kp C         &kp V             &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N           &kp M      &kp COMMA      &kp DOT      &kp FSLH  &mt RIGHT_SHIFT APOSTROPHE
                      &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &tog_layer 1 1  &kp SPACE     &kp SPACE         &tog_layer 2 2  &kp RCTRL  &kp RIGHT_ALT  &key_repeat
             >;
@@ -133,11 +142,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F12  &kp F1     &kp F2     &kp F3    &kp F4    &kp F5                         &kp F6          &kp F7         &kp F8                &kp F9                 &kp F10        &kp F11
-&trans   &kp EXCL   &kp AT     &kp N3    &kp N4    &kp PERCENT                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp DEL
-&trans   &kp CARET  &kp POUND  &kp STAR  &kp DLLR  &trans                         &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
-&trans   &kp TILDE  &kp GRAVE  &trans    &trans    &trans       &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
-                    &trans     &trans    &trans    &trans       &trans    &trans  &trans          &trans         &trans                &trans
+&kp F12  &kp F1     &kp F2     &kp F3    &kp F4         &kp F5                         &kp F6          &kp F7         &kp F8                &kp F9                 &kp F10        &kp F11
+&trans   &kp EXCL   &kp AT     &kp PIPE  &kp BACKSLASH  &kp PERCENT                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp DEL
+&trans   &kp CARET  &kp POUND  &kp STAR  &kp DLLR       &kp ENTER                      &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
+&trans   &kp TILDE  &kp GRAVE  &trans    &trans         &kp DELETE   &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
+                    &trans     &trans    &trans         &trans       &trans    &trans  &trans          &trans         &trans                &trans
             >;
 
             sensor-bindings =
@@ -156,11 +165,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans      &trans      &trans     &trans      &trans            &trans                              &trans         &trans            &trans        &trans     &trans  &trans
-&trans      &kp INS     &kp PSCRN  &trans      &trans            &trans                              &kp C_AC_BACK  &kp C_AC_FORWARD  &kp HOME      &kp END    &trans  &kp DELETE
-&caps_word  &kp LALT    &trans     &trans      &kp INSERT        &trans                              &kp LEFT       &kp DOWN          &kp UP_ARROW  &kp RIGHT  &trans  &kp BSPC
-&trans      &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp LA(LEFT_WIN)  &kp LS(LEFT_WIN)  &trans    &trans  &trans         &trans            &trans        &trans     &trans  &trans
-                        &trans     &trans      &trans            &trans            &trans    &trans  &trans         &shed_enter       &trans        &trans
+&trans  &trans      &trans     &trans      &trans            &trans                              &trans         &trans            &trans        &trans     &trans  &trans
+&trans  &trans      &kp PSCRN  &trans      &kp LA(LS(TAB))   &kp LA(TAB)                         &kp C_AC_BACK  &kp C_AC_FORWARD  &kp HOME      &kp END    &trans  &kp DELETE
+&trans  &trans      &trans     &trans      &kp INSERT        &trans                              &kp LEFT       &kp DOWN          &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp LA(LEFT_WIN)  &kp LS(LEFT_WIN)  &trans    &trans  &kp LC(LEFT)   &kp LC(RIGHT)     &trans        &trans     &trans  &trans
+                    &trans     &trans      &trans            &trans            &trans    &trans  &trans         &shed_enter       &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
