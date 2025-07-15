@@ -41,11 +41,6 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <32 31>;
         };
-
-        cmd_q {
-            bindings = <&kp LA(F4)>;
-            key-positions = <52 13>;
-        };
     };
 
     behaviors {
@@ -63,7 +58,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            hold-trigger-key-positions = <54>;
             flavor = "tap-preferred";
         };
 
@@ -71,7 +65,15 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sticky LEFT_SHIFT>, <&caps_word>;
+        };
+
+        sticky: sticky {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
         };
     };
 
@@ -89,11 +91,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&gresc       &kp N1  &kp N2    &kp N3        &kp N4            &kp N5                                  &kp N6  &kp N7     &kp N8     &kp N9           &kp N0    &kp MINUS
-&kp TAB      &kp Q   &kp W     &kp E         &kp R             &kp T                                   &kp Y   &kp U      &kp I      &kp O            &kp P     &kp BSPC
-&shift_caps  &kp A   &kp S     &kp D         &kp F             &kp G                                   &kp H   &kp J      &kp K      &kp L            &kp SEMI  &kp RET
-&shift_caps  &kp Z   &kp X     &kp C         &kp V             &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M      &kp COMMA  &kp DOT          &kp FSLH  &kp APOS
-                     &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mo 1   &kp SPACE     &kp SPACE         &mo 2   &kp RCTRL  &kp RWIN   &kp RIGHT_SHIFT
+&gresc       &kp N1  &kp N2    &kp N3        &kp N4            &kp N5                                  &kp N6  &kp N7     &kp N8         &kp N9       &kp N0    &kp MINUS
+&kp TAB      &kp Q   &kp W     &kp E         &kp R             &kp T                                   &kp Y   &kp U      &kp I          &kp O        &kp P     &kp BSPC
+&shift_caps  &kp A   &kp S     &kp D         &kp F             &kp G                                   &kp H   &kp J      &kp K          &kp L        &kp SEMI  &kp RET
+&shift_caps  &kp Z   &kp X     &kp C         &kp V             &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M      &kp COMMA      &kp DOT      &kp FSLH  &mt RIGHT_SHIFT APOSTROPHE
+                     &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mo 1   &kp SPACE     &kp SPACE         &mo 2   &kp RCTRL  &kp RIGHT_ALT  &key_repeat
             >;
 
             sensor-bindings =
@@ -136,11 +138,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans      &trans      &trans     &trans       &trans            &trans                              &trans         &trans            &trans        &trans     &trans  &trans
-&trans      &kp INS     &kp PSCRN  &kp K_CMENU  &trans            &trans                              &kp C_AC_BACK  &kp C_AC_FORWARD  &kp HOME      &kp END    &trans  &kp DELETE
-&caps_word  &kp LALT    &trans     &trans       &kp INSERT        &trans                              &kp LEFT       &kp DOWN          &kp UP_ARROW  &kp RIGHT  &trans  &kp BSPC
-&trans      &kp K_REDO  &kp K_CUT  &kp K_COPY   &kp LA(LEFT_WIN)  &kp LS(LEFT_WIN)  &trans    &trans  &trans         &trans            &trans        &trans     &trans  &trans
-                        &trans     &trans       &trans            &trans            &trans    &trans  &trans         &trans            &trans        &trans
+&trans      &trans      &trans     &trans      &trans            &trans                              &trans         &trans            &trans        &trans     &trans  &trans
+&trans      &kp INS     &kp PSCRN  &trans      &trans            &trans                              &kp C_AC_BACK  &kp C_AC_FORWARD  &kp HOME      &kp END    &trans  &kp DELETE
+&caps_word  &kp LALT    &trans     &trans      &kp INSERT        &trans                              &kp LEFT       &kp DOWN          &kp UP_ARROW  &kp RIGHT  &trans  &kp BSPC
+&trans      &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp LA(LEFT_WIN)  &kp LS(LEFT_WIN)  &trans    &trans  &trans         &trans            &trans        &trans     &trans  &trans
+                        &trans     &trans      &trans            &trans            &trans    &trans  &trans         &trans            &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
