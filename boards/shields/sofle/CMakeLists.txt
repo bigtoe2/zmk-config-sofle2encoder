@@ -9,4 +9,5 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_SOFLE_CUSTOM_DISPLAY AND CONFIG_ZMK_SPLIT_ROLE_
     zephyr_library_sources(custom_display/widgets/battery_status.c)
     zephyr_library_sources(custom_display/widgets/connection_status.c)
     zephyr_library_sources(custom_display/widgets/layer_status.c)
+    zephyr_library_sources(custom_display/widgets/output_status.c)
 endif()
