@@ -1,10 +1,10 @@
 # Copyright (c) 2024 ZMK
 # SPDX-License-Identifier: MIT
 
-if SHIELD_KUNIBOARD_LEFT
+if SHIELD_SOFLE_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Kuniboard"
+	default "Sofle"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
@@ -22,19 +22,19 @@ config LS0XX
 endif # ZMK_DISPLAY
 endif
 
-if SHIELD_KUNIBOARD_LEFT || SHIELD_KUNIBOARD_RIGHT
+if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
 config ZMK_SPLIT
 	default y
 endif
 
-config KUNIBOARD_CUSTOM_DISPLAY
+config SOFLE_CUSTOM_DISPLAY
     bool "use custom kuniboard display"
     default n
 
-if KUNIBOARD_CUSTOM_DISPLAY
+if SOFLE_CUSTOM_DISPLAY
 
-    config KUNIBOARD_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
+    config SOFLE_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
         bool "rotate the display counterclockwise"
         default n
 
@@ -42,7 +42,7 @@ if KUNIBOARD_CUSTOM_DISPLAY
         bool "right side central"
         default n
 
-    config CONFIG_KUNIBOARD_SCREEN_INVERTED
+    config CONFIG_SOFLE_SCREEN_INVERTED
         bool "invert kuniboard display color"
 
     choice ZMK_DISPLAY_STATUS_SCREEN
