@@ -147,11 +147,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F12       &kp F1     &kp F2     &kp F3    &kp F4         &kp F5                         &kp F6          &kp F7         &kp F8                &f9_home_f9            &kp F10        &kp F11
-&trans        &kp EXCL   &kp AT     &kp PIPE  &kp BACKSLASH  &kp PERCENT                    &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp DEL
-&kp CAPSLOCK  &kp CARET  &kp POUND  &kp STAR  &kp DLLR       &kp ENTER                      &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
-&trans        &kp TILDE  &kp GRAVE  &trans    &trans         &kp DELETE   &trans    &trans  &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
-                         &trans     &trans    &trans         &trans       &trans    &trans  &trans          &trans         &trans                &trans
+&kp F12       &kp F1     &kp F2     &kp F3    &kp F4         &kp F5                                &kp F6          &kp F7         &kp F8                &f9_home_f9            &kp F10        &kp F11
+&trans        &kp EXCL   &kp AT     &kp PIPE  &kp BACKSLASH  &kp PERCENT                           &kp CARET       &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &kp DEL
+&kp CAPSLOCK  &kp CARET  &kp POUND  &kp STAR  &kp DLLR       &kp ENTER                             &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
+&trans        &kp TILDE  &kp GRAVE  &trans    &trans         &kp DELETE   &trans    &trans         &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans
+                         &trans     &trans    &trans         &trans       &trans    &kp LA(SPACE)  &trans          &trans         &trans                &trans
             >;
 
             sensor-bindings =
