@@ -29,7 +29,7 @@ config ZMK_SPLIT
 endif
 
 config SOFLE_CUSTOM_DISPLAY
-    bool "use custom kuniboard display"
+    bool "use custom sofle display"
     default n
 
 if SOFLE_CUSTOM_DISPLAY
@@ -43,7 +43,7 @@ if SOFLE_CUSTOM_DISPLAY
         default n
 
     config CONFIG_SOFLE_SCREEN_INVERTED
-        bool "invert kuniboard display color"
+        bool "invert sofle display color"
 
     choice ZMK_DISPLAY_STATUS_SCREEN
         default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
