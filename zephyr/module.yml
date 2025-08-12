@@ -1,4 +1,5 @@
-name: "zmk-shield-nice!view-gem"
+name: "zmk-shield-nice!-simple"
 build:
+  cmake: .
   settings:
     board_root: .          # <- tells Zephyr to look for boards/shields here
