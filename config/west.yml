@@ -9,5 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-config-sofle2encoder
+      remote: bigtoe2
+      revision: main
   self:
     path: config
