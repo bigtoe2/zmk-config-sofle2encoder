@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: bigtoe2
       url-base: https://github.com/bigtoe2
+    - name: m165437
+      url-base: https://github.com/M165437
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -14,5 +16,8 @@ manifest:
     - name: zmk-config-sofle2encoder
       remote: bigtoe2
       revision: master
+    - name: nice-view-gem
+      remote: m165437
+      revision: main
   self:
     path: config
