@@ -13,6 +13,6 @@ manifest:
       import: app/west.yml
     - name: zmk-config-sofle2encoder
       remote: bigtoe2
-      revision: main
+      revision: master
   self:
     path: config
