@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: bigtoe2
       url-base: https://github.com/bigtoe2
+    - name: infused-kim
+      url-base: https://github.com/infused-kim
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -16,6 +18,9 @@ manifest:
       revision: master
     - name: nice-view-gem
       remote: bigtoe2
+      revision: main
+    - name: tmp-npv
+      remote: infused-kim
       revision: main
   self:
     path: config
