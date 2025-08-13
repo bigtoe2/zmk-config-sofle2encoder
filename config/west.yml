@@ -26,8 +26,8 @@ manifest:
       remote: bigtoe2
       revision: main
     - name: tmp-npv
-      # remote: bigtoe2
-      remote: infused-kim
+      remote: bigtoe2
+      # remote: infused-kim
       revision: main
   self:
     path: config
