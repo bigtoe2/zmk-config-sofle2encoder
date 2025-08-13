@@ -4,12 +4,20 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: bigtoe2
       url-base: https://github.com/bigtoe2
+    - name: ReFil
+      url-base: https://github.com/ReFil
+    - name: tobiasarndt
+      url-base: https://github.com/tobiasarndt
+    - name: infused-kim
+      url-base: https://github.com/infused-kim
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      # remote: zmkfirmware
+      # revision: main
+      remote: ReFil
+      revision: split-data-xfer
       import: app/west.yml
     - name: zmk-config-sofle2encoder
       remote: bigtoe2
@@ -18,7 +26,8 @@ manifest:
       remote: bigtoe2
       revision: main
     - name: tmp-npv
-      remote: bigtoe2
+      # remote: bigtoe2
+      remote: infused-kim
       revision: main
   self:
     path: config
