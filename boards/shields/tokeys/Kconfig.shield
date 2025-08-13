@@ -1,0 +1,12 @@
+# Copyright (c) 2024 ZMK
+# SPDX-License-Identifier: MIT
+
+config SHIELD_TOKEYS
+	def_bool $(shields_list_contains,tokeys)
+
+config SHIELD_TOKEYS_LEFT
+	def_bool $(shields_list_contains,tokeys_left)
+
+config SHIELD_TOKEYS_RIGHT
+	def_bool $(shields_list_contains,tokeys_right)
+	

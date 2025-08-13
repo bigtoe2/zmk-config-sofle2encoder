@@ -1,10 +1,10 @@
 # Copyright (c) 2024 ZMK
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SOFLE_LEFT
+if SHIELD_TOKEYS_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Sofle"
+	default "Tokeys"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
@@ -22,19 +22,19 @@ config LS0XX
 endif # ZMK_DISPLAY
 endif
 
-if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
+if SHIELD_TOKEYS_LEFT || SHIELD_TOKEYS_RIGHT
 
 config ZMK_SPLIT
 	default y
 endif
 
-config SOFLE_CUSTOM_DISPLAY
+config TOKEYS_CUSTOM_DISPLAY
     bool "use custom sofle display"
     default n
 
-if SOFLE_CUSTOM_DISPLAY
+if TOKEYS_CUSTOM_DISPLAY
 
-    config SOFLE_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
+    config TOKEYS_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
         bool "rotate the display counterclockwise"
         default n
 
@@ -42,7 +42,7 @@ if SOFLE_CUSTOM_DISPLAY
         bool "right side central"
         default n
 
-    config CONFIG_SOFLE_SCREEN_INVERTED
+    config CONFIG_TOKEYS_SCREEN_INVERTED
         bool "invert sofle display color"
 
     choice ZMK_DISPLAY_STATUS_SCREEN
