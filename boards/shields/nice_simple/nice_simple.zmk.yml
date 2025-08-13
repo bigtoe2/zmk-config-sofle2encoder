@@ -1,6 +1,6 @@
 file_format: "1"
-id: tokeys
-name: Tokeys
+id: sofle
+name: Sofle
 type: shield
 url: https://github.com/josefadamcik/SofleKeyboard
 requires: [pro_micro]
@@ -10,5 +10,5 @@ features:
   - encoder
   - studio
 siblings:
-  - tokeys_left
-  - tokeys_right
+  - sofle_left
+  - sofle_right

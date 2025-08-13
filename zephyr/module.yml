@@ -1,4 +1,4 @@
-name: "zmk-keyboard-tokeys"
+name: "zmk-shield-nice!-simple"
 build:
   settings:
     board_root: .          # <- tells Zephyr to look for boards/shields here

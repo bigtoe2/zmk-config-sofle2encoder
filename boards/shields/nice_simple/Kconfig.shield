@@ -1,0 +1,12 @@
+# Copyright (c) 2024 ZMK
+# SPDX-License-Identifier: MIT
+
+config SHIELD_NICE_SIMPLE
+	def_bool $(shields_list_contains,nice_simple)
+
+config SHIELD_SOFLE_LEFT
+	def_bool $(shields_list_contains,sofle_left)
+
+config SHIELD_SOFLE_RIGHT
+	def_bool $(shields_list_contains,sofle_right)
+	
