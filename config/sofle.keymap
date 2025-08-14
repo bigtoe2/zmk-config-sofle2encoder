@@ -109,6 +109,20 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        home_ctrl: home_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HOME_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp HOME>, <&kp LC(HOME)>;
+        };
+
+        end_ctrl: end_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "END_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp END>, <&kp LC(END)>;
+        };
     };
 
     macros {
@@ -196,7 +210,7 @@
 
             bindings = <
 &trans  &trans      &trans     &trans      &trans            &trans                              &trans         &trans            &trans        &trans     &trans         &kp PAUSE_BREAK
-&trans  &trans      &trans     &trans      &kp INSERT        &trans                              &kp C_AC_BACK  &kp C_AC_FORWARD  &kp HOME      &kp END    &kp PAGE_UP    &trans
+&trans  &trans      &trans     &trans      &kp INSERT        &trans                              &kp C_AC_BACK  &kp C_AC_FORWARD  &home_ctrl    &end_ctrl  &kp PAGE_UP    &trans
 &trans  &trans      &trans     &trans      &trans            &trans                              &kp LEFT       &kp DOWN          &kp UP_ARROW  &kp RIGHT  &kp PAGE_DOWN  &trans
 &trans  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp LA(LEFT_WIN)  &kp LS(LEFT_WIN)  &trans    &trans  &kp LC(LEFT)   &kp LC(RIGHT)     &trans        &trans     &trans         &trans
                     &trans     &trans      &trans            &trans            &trans    &trans  &trans         &shed_enter       &trans        &trans
@@ -207,11 +221,11 @@
 
         layer_4 {
             bindings = <
-&kp F12    &trans        &trans        &trans        &trans        &trans                           &trans  &trans    &trans    &trans     &trans       &kp F11
-&trans     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                           &trans  &trans    &trans    &trans     &trans       &trans
-&kp ENTER  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                     &trans  &trans    &trans    &trans     &trans       &trans
-&trans     &trans        &trans        &trans        &trans        &kp BACKSPACE  &trans    &trans  &trans  &kp HOME  &kp UP    &kp END    &kp PAGE_UP  &kp PAGE_DOWN
-                         &to 0         &trans        &trans        &trans         &to 0     &none   &trans  &kp LEFT  &kp DOWN  &kp RIGHT
+&kp F12    &trans        &trans        &trans        &trans        &trans                           &trans  &trans      &trans    &trans     &trans       &kp F11
+&trans     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                           &trans  &trans      &trans    &trans     &trans       &trans
+&kp ENTER  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0                     &trans  &trans      &trans    &trans     &trans       &trans
+&trans     &trans        &trans        &trans        &trans        &kp BACKSPACE  &trans    &trans  &trans  &home_ctrl  &kp UP    &end_ctrl  &kp PAGE_UP  &kp PAGE_DOWN
+                         &to 0         &trans        &trans        &trans         &to 0     &none   &trans  &kp LEFT    &kp DOWN  &kp RIGHT
             >;
 
             label = "Misc";
