@@ -24,7 +24,7 @@ manifest:
       revision: master
     - name: nice-view-gem
       remote: bigtoe2
-      revision: main
+      revision: test
     - name: tmp-npv
       remote: bigtoe2
       # remote: infused-kim
