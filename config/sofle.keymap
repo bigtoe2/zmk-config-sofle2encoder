@@ -95,7 +95,7 @@
         right_arrow_kp: right_arrow_kp {
             compatible = "zmk,behavior-mod-morph";
             label = "RIGHT_ARROW_KP";
-            bindings = <&kp MINUS>, <&right_arrow_kp>;
+            bindings = <&kp MINUS>, <&right_arrow>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
