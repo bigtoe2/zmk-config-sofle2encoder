@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
     # - name: bigtoe2
     #   url-base: https://github.com/bigtoe2
     # - name: ReFil
@@ -19,6 +21,9 @@ manifest:
       # remote: ReFil
       # revision: split-data-xfer
       import: app/west.yml
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
     # - name: zmk-config-sofle2encoder
     #   remote: bigtoe2
     #   revision: master
