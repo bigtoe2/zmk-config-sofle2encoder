@@ -1,4 +1,4 @@
-#include <sofle.dtsi>
+#include "sofle.dtsi"
 #include <layouts/josefadamcik/sofle.dtsi>
 
 / {
