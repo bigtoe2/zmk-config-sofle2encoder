@@ -1,9 +1,10 @@
-#include "sofle.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <layouts/josefadamcik/sofle.dtsi>
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &josefadamcik_sofle_layout;
         zephyr,display = &oled;
     };
 
@@ -53,4 +54,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         inversion-on;
         prechargep = <0x22>;
     };
+};
+
+&josefadamcik_sofle_layout {
+    transform = <&default_transform>;
 };
