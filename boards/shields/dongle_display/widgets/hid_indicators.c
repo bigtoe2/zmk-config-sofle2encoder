@@ -78,9 +78,8 @@ static void caps_word_indicator_update_cb(struct hid_indicators_state state) {
 }
 
 static struct hid_indicators_state caps_word_indicator_get_state(const zmk_event_t *eh) {
-    const struct zmk_caps_word_state_changed *ev =
-        as_zmk_caps_word_state_changed(eh);
-    LOG_INF("DISP | Caps Word State Changed: %d", ev->active);
+    const struct zmk_hid_indicators_changed *ev =
+        as_zmk_hid_indicators_changed(eh);
     return (struct hid_indicators_state){
         .caps_word_active = ev->active,
     };
