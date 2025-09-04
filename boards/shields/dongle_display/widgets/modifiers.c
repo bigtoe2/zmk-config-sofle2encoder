@@ -78,6 +78,39 @@ struct modifier_symbol *modifier_symbols[] = {
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
+static void anim_opa_cb(void *var, int32_t v) {
+    lv_obj_set_style_opa((lv_obj_t *)var, (lv_opa_t)v, LV_PART_MAIN);
+}
+
+static void hide_ready_cb(lv_anim_t *a) {
+    lv_obj_add_flag((lv_obj_t *)a->var, LV_OBJ_FLAG_HIDDEN);
+}
+
+static void fade_in(lv_obj_t *obj, uint32_t ms) {
+    lv_obj_clear_flag(obj, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_set_style_opa(obj, LV_OPA_TRANSP, LV_PART_MAIN);
+
+    lv_anim_t a;
+    lv_anim_init(&a);
+    lv_anim_set_var(&a, obj);
+    lv_anim_set_time(&a, ms);
+    lv_anim_set_exec_cb(&a, anim_opa_cb);
+    lv_anim_set_values(&a, LV_OPA_TRANSP, LV_OPA_COVER);
+    lv_anim_start(&a);
+}
+
+static void fade_out_and_hide(lv_obj_t *obj, uint32_t ms) {
+    /* Start from current opacity to 0, then add HIDDEN flag */
+    lv_anim_t a;
+    lv_anim_init(&a);
+    lv_anim_set_var(&a, obj);
+    lv_anim_set_time(&a, ms);
+    lv_anim_set_exec_cb(&a, anim_opa_cb);
+    lv_anim_set_values(&a, lv_obj_get_style_opa(obj, LV_PART_MAIN), LV_OPA_TRANSP);
+    lv_anim_set_ready_cb(&a, hide_ready_cb);
+    lv_anim_start(&a);
+}
+
 static void anim_y_cb(void *var, int32_t v) {
     lv_obj_set_y(var, v);
 }
@@ -98,12 +131,19 @@ static void set_modifiers(lv_obj_t *widget, struct modifiers_state state) {
         bool mod_is_active = (state.modifiers & modifier_symbols[i]->modifier) > 0;
 
         if (mod_is_active && !modifier_symbols[i]->is_active) {
+            /* show + animate in */
+            fade_in(modifier_symbols[i]->symbol, 140);
+            fade_in(modifier_symbols[i]->selection_line, 140);
             move_object_y(modifier_symbols[i]->symbol, 1, 0);
             move_object_y(modifier_symbols[i]->selection_line, SIZE_SYMBOLS + 4, SIZE_SYMBOLS + 2);
             modifier_symbols[i]->is_active = true;
+
         } else if (!mod_is_active && modifier_symbols[i]->is_active) {
+            /* animate out, then hide */
             move_object_y(modifier_symbols[i]->symbol, 0, 1);
             move_object_y(modifier_symbols[i]->selection_line, SIZE_SYMBOLS + 2, SIZE_SYMBOLS + 4);
+            fade_out_and_hide(modifier_symbols[i]->symbol, 140);
+            fade_out_and_hide(modifier_symbols[i]->selection_line, 140);
             modifier_symbols[i]->is_active = false;
         }
     }
@@ -127,9 +167,8 @@ ZMK_SUBSCRIPTION(widget_modifiers, zmk_keycode_state_changed);
 
 int zmk_widget_modifiers_init(struct zmk_widget_modifiers *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
-
     lv_obj_set_size(widget->obj, NUM_SYMBOLS * (SIZE_SYMBOLS + 1) + 1, SIZE_SYMBOLS + 3);
-    
+
     static lv_style_t style_line;
     lv_style_init(&style_line);
     lv_style_set_line_width(&style_line, 2);
@@ -137,20 +176,31 @@ int zmk_widget_modifiers_init(struct zmk_widget_modifiers *widget, lv_obj_t *par
     static const lv_point_t selection_line_points[] = { {0, 0}, {SIZE_SYMBOLS, 0} };
 
     for (int i = 0; i < NUM_SYMBOLS; i++) {
+        /* icon */
         modifier_symbols[i]->symbol = lv_img_create(widget->obj);
         lv_obj_align(modifier_symbols[i]->symbol, LV_ALIGN_TOP_LEFT, 1 + (SIZE_SYMBOLS + 1) * i, 1);
         lv_img_set_src(modifier_symbols[i]->symbol, modifier_symbols[i]->symbol_dsc);
 
+        /* selection underline */
         modifier_symbols[i]->selection_line = lv_line_create(widget->obj);
         lv_line_set_points(modifier_symbols[i]->selection_line, selection_line_points, 2);
         lv_obj_add_style(modifier_symbols[i]->selection_line, &style_line, 0);
         lv_obj_align_to(modifier_symbols[i]->selection_line, modifier_symbols[i]->symbol, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 3);
+
+        /* NEW: start hidden & transparent so nothing shows until pressed */
+        lv_obj_set_style_opa(modifier_symbols[i]->symbol, LV_OPA_TRANSP, LV_PART_MAIN);
+        lv_obj_set_style_opa(modifier_symbols[i]->selection_line, LV_OPA_TRANSP, LV_PART_MAIN);
+        lv_obj_add_flag(modifier_symbols[i]->symbol, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(modifier_symbols[i]->selection_line, LV_OBJ_FLAG_HIDDEN);
+
+        /* ensure inactive baseline positions */
+        modifier_symbols[i]->is_active = false;
+        lv_obj_set_y(modifier_symbols[i]->symbol, 1);
+        lv_obj_set_y(modifier_symbols[i]->selection_line, SIZE_SYMBOLS + 4);
     }
 
     sys_slist_append(&widgets, &widget->node);
-
     widget_modifiers_init();
-
     return 0;
 }
 
