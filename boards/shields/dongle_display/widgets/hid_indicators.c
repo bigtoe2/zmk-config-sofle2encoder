@@ -22,6 +22,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 struct hid_indicators_state {    
     uint8_t hid_indicators;
+    bool caps_word_active;
 };
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
@@ -30,6 +31,9 @@ static void set_hid_indicators(lv_obj_t *label, struct hid_indicators_state stat
     char text[7] = {};
     bool lock = false;
 
+    if (state.caps_word_active) {
+        strncat(text, "CW", 2);
+    }
     if (state.hid_indicators & LED_CLCK) {
         strncat(text, "C", 1);
         lock = true;
@@ -66,12 +70,33 @@ ZMK_DISPLAY_WIDGET_LISTENER(widget_hid_indicators, struct hid_indicators_state,
 
 ZMK_SUBSCRIPTION(widget_hid_indicators, zmk_hid_indicators_changed);
 
+static void caps_word_indicator_update_cb(struct hid_indicators_state state) {
+    struct zmk_widget_hid_indicators *widget;
+    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) {
+        set_hid_indicators(widget->obj, state);
+    }
+}
+
+static struct hid_indicators_state caps_word_indicator_get_state(const zmk_event_t *eh) {
+    const struct zmk_caps_word_state_changed *ev =
+        as_zmk_caps_word_state_changed(eh);
+    LOG_INF("DISP | Caps Word State Changed: %d", ev->active);
+    return (struct hid_indicators_state){
+        .caps_word_active = ev->active,
+    };
+}
+
+ZMK_DISPLAY_WIDGET_LISTENER(widget_caps_word_indicator, struct hid_indicators_state,
+                            caps_word_indicator_update_cb, caps_word_indicator_get_state)
+ZMK_SUBSCRIPTION(widget_caps_word_indicator, zmk_caps_word_state_changed);
+
 int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
 
     sys_slist_append(&widgets, &widget->node);
 
     widget_hid_indicators_init();
+    widget_caps_word_indicator_init();
 
     return 0;
 }
