@@ -59,7 +59,7 @@ ZMK_SUBSCRIPTION(widget_layer_status, zmk_layer_state_changed);
 int zmk_widget_layer_status_init(struct zmk_widget_layer_status *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
 
-    lv_obj_set_style_text_font(widget->obj, &lv_font_montserrat_40, 0);
+    lv_obj_set_style_text_font(widget->obj, &lv_font_montserrat_16, 0);
     sys_slist_append(&widgets, &widget->node);
 
     widget_layer_status_init();

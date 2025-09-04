@@ -39,10 +39,10 @@ choice LV_COLOR_DEPTH
 endchoice
 
 choice LV_FONT_DEFAULT
-    default LV_FONT_DEFAULT_MONTSERRAT_20
+    default LV_FONT_DEFAULT_MONTSERRAT_12
 endchoice
 
-config LV_FONT_MONTSERRAT_40
+config LV_FONT_MONTSERRAT_16
     default y
 
 endif
