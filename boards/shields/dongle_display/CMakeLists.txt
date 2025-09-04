@@ -17,5 +17,9 @@ if(CONFIG_ZMK_DISPLAY AND CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM AND ((NOT CONF
     zephyr_library_sources(widgets/output_status_sym.c)
     zephyr_library_sources(src/events/split_central_status_changed.c)
     zephyr_library_sources(src/events/caps_word_state_changed.c)
-    # zephyr_library_sources(src/behaviors/behavior_caps_word.c)
+    set_source_files_properties(
+            ${APPLICATION_SOURCE_DIR}/src/behaviors/behavior_caps_word.c
+            TARGET_DIRECTORY app
+            PROPERTIES HEADER_FILE_ONLY ON)
+    target_sources(app PRIVATE src/behaviors/behavior_caps_word.c)
 endif()
