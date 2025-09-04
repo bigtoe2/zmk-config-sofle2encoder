@@ -65,7 +65,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_CAPS";
             #binding-cells = <0>;
-            bindings = <&sticky LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sticky RSHIFT>, <&caps_word>;
         };
 
         sticky: sticky {
@@ -74,6 +74,7 @@
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
+            quick-release;
         };
 
         tog_layer: tog_layer {
@@ -107,7 +108,7 @@
             bindings = <&kp DELETE>, <&kp INSERT>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_RSFT)>;
         };
 
         home_ctrl: home_ctrl {
@@ -203,7 +204,7 @@
                           &to 0         &trans        &trans        &trans        &to 0     &none   &trans  &kp LEFT    &kp DOWN  &kp RIGHT
             >;
 
-            label = "Misc";
+            label = "Arrows";
         };
 
         raise_layer {
