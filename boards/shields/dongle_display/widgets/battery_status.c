@@ -41,10 +41,6 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_draw_rect_dsc_t rect_fill_dsc;
     lv_draw_rect_dsc_init(&rect_fill_dsc);
     rect_fill_dsc.bg_color = lv_color_white();
-    rect_fill_dsc.border_opa = LV_OPA_TRANSP;
-
-    // Battery tip outline (x = 61, middle pixel only since height = 3)
-    lv_canvas_set_px(canvas, 61, 1, lv_color_white());
 
     // Frame corners (optional)
     lv_canvas_set_px(canvas, 0, 0, lv_color_white());
@@ -54,7 +50,8 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
 
     // Draw the filled portion from the left
     if (scaled > 0) {
-        lv_canvas_draw_rect(canvas, 0, 0, scaled, 3, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, scaled, 1, 60-scaled, 1, &rect_fill_dsc);
+        lv_canvas_set_px(canvas, 61, 1, lv_color_white());
     }
 }
 
