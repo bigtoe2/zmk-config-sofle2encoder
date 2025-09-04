@@ -13,7 +13,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/display.h>
 #include <zmk/event_manager.h>
 #include <zmk/events/hid_indicators_changed.h>
-#include "../events/caps_word_state_changed.h"
+#include "../src/events/caps_word_state_changed.h"
 
 #include "hid_indicators.h"
 
