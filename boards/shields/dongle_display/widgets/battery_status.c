@@ -30,23 +30,23 @@ struct peripheral_battery_state {
 static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT][102 * 5];
 
 static void draw_battery(lv_obj_t *canvas, uint8_t level) {
-    lv_canvas_fill_bg(canvas, lv_color_white(), LV_OPA_COVER);
+    lv_canvas_fill_bg(canvas, lv_color_black(), LV_OPA_COVER);
     
     lv_draw_rect_dsc_t rect_fill_dsc;
     lv_draw_rect_dsc_init(&rect_fill_dsc);
-    rect_fill_dsc.bg_color = lv_color_black();
+    rect_fill_dsc.bg_color = lv_color_white();
 
-    lv_canvas_set_px(canvas, 0, 0, lv_color_black());
-    lv_canvas_set_px(canvas, 0, 4, lv_color_black());
-    lv_canvas_set_px(canvas, 101, 0, lv_color_black());
-    lv_canvas_set_px(canvas, 101, 4, lv_color_black());
+    lv_canvas_set_px(canvas, 0, 0, lv_color_white());
+    lv_canvas_set_px(canvas, 0, 4, lv_color_white());
+    lv_canvas_set_px(canvas, 101, 0, lv_color_white());
+    lv_canvas_set_px(canvas, 101, 4, lv_color_white());
 
     if (level <= 99 && level > 0)
     {
         lv_canvas_draw_rect(canvas, level, 1, 100 - level, 3, &rect_fill_dsc);
-        lv_canvas_set_px(canvas, 100, 1, lv_color_black());
-        lv_canvas_set_px(canvas, 100, 2, lv_color_black());
-        lv_canvas_set_px(canvas, 100, 3, lv_color_black());
+        lv_canvas_set_px(canvas, 100, 1, lv_color_white());
+        lv_canvas_set_px(canvas, 100, 2, lv_color_white());
+        lv_canvas_set_px(canvas, 100, 3, lv_color_white());
     }
 }
 
