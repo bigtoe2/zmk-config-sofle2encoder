@@ -1,4 +1,4 @@
-#include <app/boards/shields/sofle/sofle.dtsi>
+#include "sofle.dtsi"
 
 &kscan0 {
     col-gpios
