@@ -21,9 +21,9 @@ manifest:
       # remote: ReFil
       # revision: split-data-xfer
       import: app/west.yml
-    - name: zmk-dongle-display
-      remote: englmaxi
-      revision: main
+    # - name: zmk-dongle-display
+    #   remote: englmaxi
+    #   revision: main
     # - name: zmk-config-sofle2encoder
     #   remote: bigtoe2
     #   revision: master
