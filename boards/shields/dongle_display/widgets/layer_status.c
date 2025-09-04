@@ -75,7 +75,7 @@ static void set_layer_symbol(lv_obj_t *label, struct layer_status_state state) {
 
     /* OUT phase: slide up & fade out */
     {
-        lv_anim a;
+        lv_anim_t a;
         lv_anim_init(&a);
         lv_anim_set_var(&a, label);
         lv_anim_set_time(&a, LAYER_ANIM_MS);
@@ -85,7 +85,7 @@ static void set_layer_symbol(lv_obj_t *label, struct layer_status_state state) {
         lv_anim_start(&a);
     }
     {
-        lv_anim a;
+        lv_anim_t a;
         lv_anim_init(&a);
         lv_anim_set_var(&a, label);
         lv_anim_set_time(&a, LAYER_ANIM_MS);
@@ -119,7 +119,7 @@ static void set_layer_symbol(lv_obj_t *label, struct layer_status_state state) {
         lv_obj_set_style_opa(lbl, LV_OPA_TRANSP, LV_PART_MAIN);
 
         /* IN phase: slide up to 0 & fade in */
-        lv_anim a1;
+        lv_anim_t a1;
         lv_anim_init(&a1);
         lv_anim_set_var(&a1, lbl);
         lv_anim_set_time(&a1, LAYER_ANIM_MS);
@@ -128,7 +128,7 @@ static void set_layer_symbol(lv_obj_t *label, struct layer_status_state state) {
         lv_anim_set_path_cb(&a1, lv_anim_path_ease_in_out);
         lv_anim_start(&a1);
 
-        lv_anim a2;
+        lv_anim_t a2;
         lv_anim_init(&a2);
         lv_anim_set_var(&a2, lbl);
         lv_anim_set_time(&a2, LAYER_ANIM_MS);
