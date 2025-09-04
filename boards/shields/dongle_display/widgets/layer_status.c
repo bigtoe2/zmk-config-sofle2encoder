@@ -15,7 +15,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/endpoints.h>
 #include <zmk/keymap.h>
 
-LV_FONT_DECLARE(LV_FONT_MONTSERRAT_40)
+#define LV_FONT_MONTSERRAT_40 1
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
