@@ -86,6 +86,7 @@ int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_
     widget->obj = lv_label_create(parent);
     widget->state = (struct hid_indicators_state){0};
     
+    lv_obj_set_width(widget->obj, 44);
     lv_label_set_long_mode(widget->obj, LV_LABEL_LONG_CLIP);
     lv_obj_set_style_text_align(widget->obj, LV_TEXT_ALIGN_RIGHT, 0);
     lv_obj_set_style_text_font(widget->obj, &lv_font_montserrat_12, 0);
