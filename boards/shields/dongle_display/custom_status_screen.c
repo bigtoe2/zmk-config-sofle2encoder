@@ -52,7 +52,8 @@ lv_obj_t *zmk_display_status_screen() {
 
     #if IS_ENABLED(CONFIG_ZMK_HID_INDICATORS)
     zmk_widget_hid_indicators_init(&hid_indicators_widget, screen);
-    lv_obj_align_to(zmk_widget_hid_indicators_obj(&hid_indicators_widget), zmk_widget_bongo_cat_obj(&bongo_cat_widget), LV_ALIGN_BOTTOM_RIGHT, -5, 5);
+    // lv_obj_align_to(zmk_widget_hid_indicators_obj(&hid_indicators_widget), zmk_widget_bongo_cat_obj(&bongo_cat_widget), LV_ALIGN_BOTTOM_RIGHT, -5, 5);
+    lv_obj_align(zmk_widget_hid_indicators_obj(&hid_indicators_widget), LV_ALIGN_BOTTOM_RIGHT, 0, 0);
     #endif
 
     zmk_widget_peripheral_battery_status_init(&peripheral_battery_status_widget, screen);
