@@ -84,7 +84,7 @@ ZMK_SUBSCRIPTION(widget_caps_word_indicator, zmk_caps_word_state_changed);
 
 int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
-    w->state = (struct hid_indicators_state){0};
+    widget->state = (struct hid_indicators_state){0};
 
     sys_slist_append(&widgets, &widget->node);
 
