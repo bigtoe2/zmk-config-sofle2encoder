@@ -13,9 +13,9 @@
 
 &sensors { triggers-per-rotation = <30>; };
 
-&left_encoder { steps = <30>; };
+&left_encoder { steps = <59>; };
 
-&right_encoder { steps = <30>; };
+&right_encoder { steps = <59>; };
 
 #define BASE 0
 #define LOWER 1
