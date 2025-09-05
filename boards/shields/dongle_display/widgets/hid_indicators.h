@@ -12,6 +12,11 @@
 struct zmk_widget_hid_indicators {
     sys_snode_t node;
     lv_obj_t *obj;
+    struct hid_indicators_state state;
+};
+struct hid_indicators_state {    
+    uint8_t hid_indicators;
+    bool caps_word_active;
 };
 
 int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_obj_t *parent);

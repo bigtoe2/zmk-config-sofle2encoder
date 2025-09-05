@@ -21,34 +21,22 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #define LED_CLCK 0x02
 #define LED_SLCK 0x04
 
-struct hid_indicators_state {    
-    uint8_t hid_indicators;
-    bool caps_word_active;
-};
-
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
 static void set_hid_indicators(lv_obj_t *label, struct hid_indicators_state state) {
     char text[7] = {};
-    bool lock = false;
 
     if (state.caps_word_active) {
-        strncat(text, "CW", 2);
+        strncat(text, "W", 1);
     }
     if (state.hid_indicators & LED_CLCK) {
         strncat(text, "C", 1);
-        lock = true;
     }
     if (state.hid_indicators & LED_NLCK) {
         strncat(text, "N", 1);
-        lock = true;
     }
     if (state.hid_indicators & LED_SLCK) {
         strncat(text, "S", 1);
-        lock = true;
-    }
-    if (lock) {
-        strncat(text, "LCK", 3);
     }
 
     lv_label_set_text(label, text);
@@ -56,7 +44,10 @@ static void set_hid_indicators(lv_obj_t *label, struct hid_indicators_state stat
 
 void hid_indicators_update_cb(struct hid_indicators_state state) {
     struct zmk_widget_hid_indicators *widget;
-    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_hid_indicators(widget->obj, state); }
+    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) {
+        widget->state.hid_indicators = state.hid_indicators;
+        set_hid_indicators(widget->obj, widget->state); 
+    }
 }
 
 static struct hid_indicators_state hid_indicators_get_state(const zmk_event_t *eh) {
@@ -74,7 +65,8 @@ ZMK_SUBSCRIPTION(widget_hid_indicators, zmk_hid_indicators_changed);
 static void caps_word_indicator_update_cb(struct hid_indicators_state state) {
     struct zmk_widget_hid_indicators *widget;
     SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) {
-        set_hid_indicators(widget->obj, state);
+        widget->state.caps_word_active = state.caps_word_active;
+        set_hid_indicators(widget->obj, widget->state);
     }
 }
 
@@ -92,6 +84,7 @@ ZMK_SUBSCRIPTION(widget_caps_word_indicator, zmk_caps_word_state_changed);
 
 int zmk_widget_hid_indicators_init(struct zmk_widget_hid_indicators *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
+    w->state = (struct hid_indicators_state){0};
 
     sys_slist_append(&widgets, &widget->node);
 
