@@ -155,7 +155,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <6000>;
-            bindings = <&LA(TAB)>,
+            bindings = <&kp LA(TAB)>,
             <&macro_wait_time 6000>,
             <&kp T>,
             <&macro_wait_time 6000>,
