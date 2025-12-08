@@ -152,13 +152,15 @@
         right_arrow_2: right_arrow_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <6000>;
+            wait-ms = <50000>;
             bindings =
                 <&kp LA(TAB)>,
-                <&macro_wait_time 6000>,
-                <&kp T>,
-                <&macro_wait_time 6000>,
-                <&kp T>;
+                <&macro_wait_time 40000>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp S &kp C &kp O &kp D &kp E>,
+                <&macro_wait_time 10000>,
+                <&kp K_SCROLL_DOWN>,
+                <&macro_wait_time 20000>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>;
 
             label = "RIGHT_ARROW_2";
         };
