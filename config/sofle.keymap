@@ -145,7 +145,11 @@
         right_arrow: right_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp MINUS &kp GREATER_THAN>;
+            bindings =
+                <&kp MINUS &kp GREATER_THAN>,
+                <&macro_tap_time 100>,
+                <&kp T &kp LEFT_ALT &kp TAB>;
+
             label = "RIGHT_ARROW";
         };
     };
