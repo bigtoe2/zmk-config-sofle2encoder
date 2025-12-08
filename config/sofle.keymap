@@ -146,12 +146,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp MINUS &kp GREATER_THAN>,
-                <&macro_tap_time 100>,
-                <&kp T &kp LEFT_ALT &kp TAB>;
+                <&kp MINUS &kp GREATER_THAN>;
 
             label = "RIGHT_ARROW";
         };
+
+        right_arrow_2: right_arrow_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms=<6000>
+            bindings = <&LA(TAB)>;
+            
+            label = "RIGHT_ARROW_2";
+        }
     };
 
     keymap {
