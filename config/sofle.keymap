@@ -145,9 +145,7 @@
         right_arrow: right_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp MINUS &kp GREATER_THAN>;
-
+            bindings = <&kp MINUS &kp GREATER_THAN>;
             label = "RIGHT_ARROW";
         };
 
@@ -155,13 +153,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <6000>;
-            bindings = <&kp LA(TAB)>,
-            <&macro_wait_time 6000>,
-            <&kp T>,
-            <&macro_wait_time 6000>,
-            <&kp T>
-            ;
-            
+            bindings =
+                <&kp LA(TAB)>,
+                <&macro_wait_time 6000>,
+                <&kp T>,
+                <&macro_wait_time 6000>,
+                <&kp T>;
+
             label = "RIGHT_ARROW_2";
         };
     };
@@ -255,11 +253,11 @@
 
             display-name = "System";
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &caps_word    &none    &none  &none  &none  &none  &none  &none  &none
-                                 &none         &none         &none         &none         &none    &none  &none  &none  &none  &none
+&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none           &none  &none  &none  &none
+&ext_power EP_TOG  &none         &none         &none         &none         &none                         &none  &right_arrow_2  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none                         &none  &none           &none  &none  &none  &none
+&none              &none         &none         &none         &none         &caps_word    &none    &none  &none  &none           &none  &none  &none  &none
+                                 &none         &none         &none         &none         &none    &none  &none  &none           &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
