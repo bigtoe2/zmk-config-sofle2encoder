@@ -154,15 +154,51 @@
             #binding-cells = <0>;
             wait-ms = <50000>;
             bindings =
-                <&kp LA(TAB)>,
-                <&macro_wait_time 40000>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp S &kp C &kp O &kp D &kp E>,
-                <&macro_wait_time 10000>,
-                <&kp K_SCROLL_DOWN>,
-                <&macro_wait_time 20000>,
-                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>;
+                <&macro_wait_time 498478>,
+                <&kp LA(SPACE) &kp W &kp SPACE>,
+                <&macro_wait_time 126728>,
+                <&kp BACKSPACE &kp BACKSPACE>,
+                <&macro_wait_time 576893>,
+                <&kp V &kp S &kp C &kp O &kp D &kp E>,
+                <&macro_wait_time 318922>,
+                <&kp ENTER>,
+                <&macro_wait_time 234781>,
+                <&kp LC(O)>,
+                <&macro_wait_time 123789>,
+                <&kp DOWN &kp ENTER &kp LA(TAB)>,
+                <&macro_wait_time 234653>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
+                <&macro_wait_time 87382>,
+                <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER>,
+                <&macro_wait_time 53428>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
+                <&macro_wait_time 78273>,
+                <&kp LEFT_WIN &kp LG(L)>;
 
             label = "RIGHT_ARROW_2";
+        };
+
+        left_arrow_2: left_arrow_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 538293>,
+                <&kp LEFT_WIN>,
+                <&macro_wait_time 237819>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&macro_wait_time 78492>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN>,
+                <&macro_wait_time 102398>,
+                <&kp LG(L)>;
+
+            label = "LEFT_ARROW_2";
+        };
+
+        left_arrow_3: left_arrow_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "LEFT_ARROW_3";
         };
     };
 
@@ -255,11 +291,11 @@
 
             display-name = "System";
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none           &none  &none  &none  &none
-&ext_power EP_TOG  &none         &none         &none         &none         &none                         &none  &right_arrow_2  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &none                         &none  &none           &none  &none  &none  &none
-&none              &none         &none         &none         &none         &caps_word    &none    &none  &none  &none           &none  &none  &none  &none
-                                 &none         &none         &none         &none         &none    &none  &none  &none           &none  &none
+&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &left_arrow_2   &left_arrow_3  &none  &none  &none  &none
+&ext_power EP_TOG  &none         &none         &none         &none         &none                         &right_arrow_2  &none          &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none                         &none           &none          &none  &none  &none  &none
+&none              &none         &none         &none         &none         &caps_word    &none    &none  &none           &none          &none  &none  &none  &none
+                                 &none         &none         &none         &none         &none    &none  &none           &none          &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
