@@ -217,7 +217,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 78273>,
-                <&kp LEFT_WIN &kp LG(L)>
+                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
                 <&macro_wait_time 538293>,
                 <&kp LEFT_WIN>,
                 <&macro_wait_time 237819>,
