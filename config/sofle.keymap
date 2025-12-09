@@ -198,7 +198,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
-                <&macro_wait_time (498478 + ran(64378))>,
+                <&macro_wait_time (498478 + rand(64378))>,
                 <&kp LA(SPACE) &kp W &kp SPACE>,
                 <&macro_wait_time 126728>,
                 <&kp BACKSPACE &kp BACKSPACE>,
