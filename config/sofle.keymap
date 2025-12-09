@@ -173,6 +173,10 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 78273>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
+                <&macro_wait_time 1000>,
+                <&kp LC(E) &kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp DOWN &kp DOWN &kp RET &kp LC(V) &kp ENTER>,
+                <&macro_wait_time 2137>,
                 <&kp LEFT_WIN &kp LG(L)>;
 
             label = "RIGHT_ARROW_2";
@@ -197,7 +201,7 @@
         left_arrow_3: left_arrow_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings =
                 <&macro_wait_time 498478>,
                 <&kp LA(SPACE) &kp W &kp SPACE>,
                 <&macro_wait_time 126728>,
@@ -226,7 +230,7 @@
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN>,
                 <&macro_wait_time 102398>,
                 <&kp LG(L)>;
-                
+
             label = "LEFT_ARROW_3";
         };
     };
