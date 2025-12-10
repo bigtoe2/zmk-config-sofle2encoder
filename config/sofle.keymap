@@ -189,10 +189,10 @@
                 <&macro_wait_time 1000>,
                 <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 7382>,
-                <&kp C_AC_SCROLL_DOWN &kp C_AC_SCROLL_DOWN>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
                 <&macro_wait_time 1000>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp ENTER>,
-                <&macro_wait_time 1000>,
+                <&macro_wait_time 10000>,
                 <&kp LG(L)>;
 
             label = "LEFT_ARROW_2";
@@ -240,7 +240,17 @@
             bindings =
                 <&kp LG(L)>,
                 <&macro_wait_time 10000>,
-                <&kp LEFT &kp LEFT &shed_enter>;
+                <&kp LEFT &kp LEFT>,
+                <&macro_wait_time 10000>,
+                <&shed_enter &kp LA(SPACE)>,
+                <&macro_wait_time 500>,
+                <&kp T &kp E &kp A &kp M &kp S>,
+                <&macro_wait_time 1234>,
+                <&kp RET &kp LC(E)>,
+                <&macro_wait_time 500>,
+                <&kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp RET &kp DOWN &kp DOWN>,
+                <&macro_wait_time 1675>,
+                <&kp ENTER &kp A &kp ENTER>;
 
             label = "LEFT_ARROW_4";
         };
