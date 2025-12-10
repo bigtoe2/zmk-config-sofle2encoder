@@ -173,7 +173,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 78273>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp ENTER>,
                 <&macro_wait_time 1000>,
                 <&kp LC(E) &kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp DOWN &kp DOWN &kp RET &kp LC(V) &kp ENTER>,
                 <&macro_wait_time 2137>,
