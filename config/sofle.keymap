@@ -242,7 +242,7 @@
                 <&macro_wait_time 10000>,
                 <&kp LEFT>,
                 <&macro_wait_time 10000>,
-                <&kp LEFT &shed_enter &kp LA(SPACE)>,
+                <&kp LEFT &kp ENTER &kp ENTER &shed_enter &kp LA(SPACE)>,
                 <&macro_wait_time 500>,
                 <&kp T &kp E &kp A &kp M &kp S>,
                 <&macro_wait_time 1234>,
