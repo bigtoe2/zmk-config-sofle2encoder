@@ -193,7 +193,7 @@
                 <&macro_wait_time 1000>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
                 <&macro_wait_time 10000>,
-                <&kp ENTER &kp LG(L)>;
+                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
 
             label = "LEFT_ARROW_2";
         };
