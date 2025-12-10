@@ -244,7 +244,9 @@
                 <&macro_wait_time 10000>,
                 <&kp LEFT>,
                 <&macro_wait_time 150>,
-                <&kp LS(T) &kp AT &kp S &kp H &kp E &kp D &kp N2 &kp N0 &kp N2 &kp N5 &kp RET &kp PRINTSCREEN>;
+                <&kp LS(T) &kp AT &kp S &kp H &kp E &kp D &kp N2 &kp N0 &kp N2 &kp N5 &kp RET>,
+                <&macro_wait_time 10000>,
+                <&kp LA(SPACE) &kp PRINTSCREEN>;
 
             label = "LEFT_ARROW_4";
         };
