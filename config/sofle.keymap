@@ -251,7 +251,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 1000>,
-                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
+                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>,
 
                 <&macro_wait_time 27000000>,
                 <&kp LEFT &kp LEFT>,
