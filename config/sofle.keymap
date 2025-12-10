@@ -186,11 +186,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LEFT_WIN>,
                 <&macro_wait_time 1000>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 7382>,
-                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN>,
+                <&kp C_AC_SCROLL_DOWN &kp C_AC_SCROLL_DOWN>,
                 <&macro_wait_time 1000>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp ENTER>,
                 <&macro_wait_time 1000>,
@@ -241,7 +240,7 @@
             bindings =
                 <&kp LG(L)>,
                 <&macro_wait_time 10000>,
-                <&kp LEFT &kp ENTER &shed_enter>;
+                <&kp LEFT &kp LEFT &shed_enter>;
 
             label = "LEFT_ARROW_4";
         };
