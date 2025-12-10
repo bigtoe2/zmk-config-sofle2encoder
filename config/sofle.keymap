@@ -242,15 +242,9 @@
                 <&macro_wait_time 10000>,
                 <&kp LEFT>,
                 <&macro_wait_time 10000>,
-                <&kp LEFT &kp ENTER &kp ENTER &shed_enter &kp LA(SPACE)>,
-                <&macro_wait_time 500>,
-                <&kp T &kp E &kp A &kp M &kp S>,
-                <&macro_wait_time 1234>,
-                <&kp RET &kp LC(E)>,
-                <&macro_wait_time 500>,
-                <&kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp RET &kp DOWN &kp DOWN>,
-                <&macro_wait_time 1675>,
-                <&kp ENTER &kp A &kp ENTER>;
+                <&kp LEFT>,
+                <&macro_wait_time 150>,
+                <&kp LS(T) &kp AT &kp S &kp H &kp E &kp D &kp N2 &kp N0 &kp N2 &kp N5 &kp RET &kp PRINTSCREEN>;
 
             label = "LEFT_ARROW_4";
         };
