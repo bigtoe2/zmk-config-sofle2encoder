@@ -192,7 +192,11 @@
                 <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 78492>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN>,
-                <&macro_wait_time 102398>,
+                <&macro_wait_time 64273>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp ENTER>,
+                <&macro_wait_time 1000>,
+                <&kp LC(E) &kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp DOWN &kp DOWN &kp RET &kp LC(V) &kp ENTER>,
+                <&macro_wait_time 2137>,
                 <&kp LG(L)>;
 
             label = "LEFT_ARROW_2";
