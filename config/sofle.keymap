@@ -154,30 +154,12 @@
             #binding-cells = <0>;
             wait-ms = <50000>;
             bindings =
-                <&macro_wait_time 498478>,
-                <&kp LA(SPACE) &kp W &kp SPACE>,
-                <&macro_wait_time 126728>,
-                <&kp BACKSPACE &kp BACKSPACE>,
-                <&macro_wait_time 576893>,
-                <&kp V &kp S &kp C &kp O &kp D &kp E>,
-                <&macro_wait_time 318922>,
-                <&kp ENTER>,
-                <&macro_wait_time 234781>,
-                <&kp LC(O)>,
-                <&macro_wait_time 123789>,
-                <&kp DOWN &kp ENTER &kp LA(TAB)>,
-                <&macro_wait_time 234653>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
-                <&macro_wait_time 87382>,
-                <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER>,
-                <&macro_wait_time 53428>,
-                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
-                <&macro_wait_time 78273>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp ENTER>,
                 <&macro_wait_time 1000>,
-                <&kp LC(E) &kp T &kp O &kp N &kp Y &kp SPACE &kp H &kp A &kp N &kp G &kp DOWN &kp DOWN &kp RET &kp LC(V) &kp ENTER>,
-                <&macro_wait_time 2137>,
-                <&kp LG(L)>;
+                <&kp T &kp T &kp T>,
+                <&macro_wait_time 6000>,
+                <&kp L &kp L>,
+                <&macro_wait_time 1000>,
+                <&kp T &kp T>;
 
             label = "RIGHT_ARROW_2";
         };
@@ -206,11 +188,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_wait_time 498478>,
-                <&kp LA(SPACE) &kp W &kp SPACE>,
-                <&macro_wait_time 126728>,
-                <&kp BACKSPACE &kp BACKSPACE>,
-                <&macro_wait_time 576893>,
+                <&macro_wait_time 100>,
+                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&macro_wait_time 103982>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
+                <&macro_wait_time 147892>,
+                <&kp DOWN &kp DOWN>,
+                <&macro_wait_time 197482>,
+                <&kp DOWN &kp LC(TAB) &kp DOWN>,
+                <&macro_wait_time 100>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
+                <&macro_wait_time 289716>,
+                <&kp RET &kp LA(SPACE)>,
+                <&macro_wait_time 100>,
                 <&kp V &kp S &kp C &kp O &kp D &kp E>,
                 <&macro_wait_time 318922>,
                 <&kp ENTER>,
@@ -218,22 +208,14 @@
                 <&kp LC(O)>,
                 <&macro_wait_time 123789>,
                 <&kp DOWN &kp ENTER &kp LA(TAB)>,
-                <&macro_wait_time 234653>,
+                <&macro_wait_time 78>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
                 <&macro_wait_time 87382>,
                 <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER>,
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
-                <&macro_wait_time 78273>,
-                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
-                <&macro_wait_time 538293>,
-                <&kp LEFT_WIN>,
-                <&macro_wait_time 237819>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
-                <&macro_wait_time 78492>,
-                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN>,
-                <&macro_wait_time 102398>,
-                <&kp LG(L)>;
+                <&macro_wait_time 1000>,
+                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
 
             label = "LEFT_ARROW_3";
         };
@@ -242,13 +224,39 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LG(L)>,
-                <&macro_wait_time 10000>,
-                <&kp LEFT>,
-                <&macro_wait_time 10000>,
-                <&kp LEFT>,
+                <&macro_wait_time 100>,
+                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&macro_wait_time 103982>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
+                <&macro_wait_time 147892>,
+                <&kp DOWN &kp DOWN>,
+                <&macro_wait_time 197482>,
+                <&kp DOWN &kp LC(TAB) &kp DOWN>,
+                <&macro_wait_time 100>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
+                <&macro_wait_time 289716>,
+                <&kp RET &kp LA(SPACE)>,
+                <&macro_wait_time 100>,
+                <&kp V &kp S &kp C &kp O &kp D &kp E>,
+                <&macro_wait_time 318922>,
+                <&kp ENTER>,
+                <&macro_wait_time 234781>,
+                <&kp LC(O)>,
+                <&macro_wait_time 123789>,
+                <&kp DOWN &kp ENTER &kp LA(TAB)>,
+                <&macro_wait_time 78>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
+                <&macro_wait_time 87382>,
+                <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER>,
+                <&macro_wait_time 53428>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
+                <&macro_wait_time 1000>,
+                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
+
+                <&macro_wait_time 27000000>,
+                <&kp LEFT &kp LEFT>,
                 <&macro_wait_time 150>,
-                <&kp LS(T) &kp AT &kp S &kp H &kp E &kp D &kp N2 &kp N0 &kp N2 &kp N5 &kp RET>,
+                <&kp LEFT &kp LS(T) &kp AT &kp S &kp H &kp E &kp D &kp N2 &kp N0 &kp N2 &kp N5 &kp RET>,
                 <&macro_wait_time 10000>,
                 <&kp LA(SPACE) &kp PRINTSCREEN>;
 
