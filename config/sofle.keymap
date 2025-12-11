@@ -179,7 +179,7 @@
                 <&macro_wait_time 100>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
                 <&macro_wait_time 1000>,
-                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
+                <&kp LS(LG(S)) &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
 
             label = "LEFT_ARROW_2";
         };
@@ -215,7 +215,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 1000>,
-                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
+                <&kp LG(LS(S)) &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
 
             label = "LEFT_ARROW_3";
         };
@@ -252,7 +252,6 @@
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 1000>,
                 <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>,
-
                 <&macro_wait_time 27000000>,
                 <&kp LEFT &kp LEFT>,
                 <&macro_wait_time 150>,
