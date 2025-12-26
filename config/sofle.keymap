@@ -155,15 +155,14 @@
             wait-ms = <50000>;
             bindings =
                 <&macro_wait_time 100>,
-                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 103982>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
                 <&macro_wait_time 100>,
-                <&kp LA(SPACE) &kp N &kp O &kp T &kp E >,
+                <&kp LA(SPACE) &kp N &kp O &kp T &kp E>,
                 <&macro_wait_time 147892>,
-                <&kp NUMBER_1 &kp NUMBER_2>,
                 <&macro_wait_time 197482>,
-                <&kp NUMBER_3 &kp LC(TAB) &kp NUMBER_4>,
+                <&kp LC(TAB)>,
                 <&macro_wait_time 100>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
                 <&macro_wait_time 1000>,
@@ -177,7 +176,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 100>,
-                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 103982>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
                 <&macro_wait_time 100>,
@@ -187,10 +186,7 @@
                 <&macro_wait_time 197482>,
                 <&kp TAB &kp LEFT_WIN>,
                 <&macro_wait_time 100>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp PRINTSCREEN>,
-                <&macro_press &kp LEFT_WIN>,
-                <&macro_tap &kp L>,
-                <&macro_release &kp LEFT_WIN>;
+                <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S &kp PRINTSCREEN &kp RG(L)>;
 
             label = "LEFT_ARROW_2";
         };
@@ -200,7 +196,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 100>,
-                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 103982>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
                 <&macro_wait_time 147892>,
@@ -226,9 +222,12 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 3229>,
-                <&macro_press &kp LEFT_WIN>,
-                <&macro_tap &kp L>,
-                <&macro_release &kp LEFT_WIN>;
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&kp L>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
 
             label = "LEFT_ARROW_3";
         };
