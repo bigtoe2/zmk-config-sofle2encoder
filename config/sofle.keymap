@@ -155,18 +155,33 @@
             wait-ms = <50000>;
             bindings =
                 <&macro_wait_time 100>,
-                <&kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
+                <&kp LEFT_WIN &kp LA(SPACE) &kp W &kp SPACE &kp E &kp D &kp G &kp E &kp RET>,
                 <&macro_wait_time 103982>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp LC(TAB) &kp LC(TAB)>,
-                <&macro_wait_time 100>,
-                <&kp LA(SPACE) &kp N &kp O &kp T &kp E>,
                 <&macro_wait_time 147892>,
+                <&kp DOWN &kp DOWN>,
                 <&macro_wait_time 197482>,
-                <&kp LC(TAB)>,
+                <&kp DOWN &kp LC(TAB) &kp DOWN>,
                 <&macro_wait_time 100>,
                 <&kp LA(SPACE) &kp W &kp SPACE &kp T &kp E &kp A &kp M &kp S>,
+                <&macro_wait_time 289716>,
+                <&kp RET &kp LA(SPACE)>,
+                <&macro_wait_time 100>,
+                <&kp V &kp S &kp C &kp O &kp D &kp E>,
+                <&macro_wait_time 318922>,
+                <&kp ENTER>,
+                <&macro_wait_time 234781>,
+                <&kp LC(O)>,
+                <&macro_wait_time 123789>,
+                <&kp DOWN &kp ENTER &kp LA(TAB)>,
+                <&macro_wait_time 78>,
+                <&kp LA(SPACE) &kp W &kp SPACE &kp V &kp I &kp S &kp U &kp A &kp L &kp RET>,
+                <&macro_wait_time 87382>,
+                <&kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER>,
+                <&macro_wait_time 53428>,
+                <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 1000>,
-                <&kp PRINTSCREEN &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
+                <&kp LG(LS(S)) &kp TAB &kp ENTER &kp DOWN &kp DOWN &kp ENTER &kp LG(L)>;
 
             label = "RIGHT_ARROW_2";
         };
@@ -222,12 +237,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 3229>,
-                <&macro_press>,
-                <&kp LEFT_WIN>,
-                <&macro_tap>,
-                <&kp L>,
-                <&macro_release>,
-                <&kp LEFT_WIN>;
+                <&kp PRINTSCREEN &kp RG(L)>,;
 
             label = "LEFT_ARROW_3";
         };
