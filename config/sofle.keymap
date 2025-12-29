@@ -222,7 +222,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 3229>,
-                <&kp PRINTSCREEN &kp K_LOCK>;
+                <&kp PRINTSCREEN &kp C_AL_LOCK>;
 
             label = "LEFT_ARROW_3";
         };
@@ -230,7 +230,7 @@
         left_arrow_4: left_arrow_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp K_LOCK>;
+            bindings = <&kp C_AL_LOCK>;
             label = "LEFT_ARROW_4";
         };
     };
