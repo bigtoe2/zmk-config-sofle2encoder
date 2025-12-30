@@ -222,7 +222,7 @@
                 <&macro_wait_time 53428>,
                 <&kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_DOWN &kp K_SCROLL_UP>,
                 <&macro_wait_time 3229>,
-                <&kp PRINTSCREEN &kp C_AL_LOCK>;
+                <&kp PRINTSCREEN &kp RG(L)>;
 
             label = "LEFT_ARROW_3";
         };
